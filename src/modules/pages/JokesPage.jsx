@@ -10,7 +10,7 @@ const jokes = () => (
     <Row type="flex" justify="center">
       <Col span={24}>
         <AddJokesList></AddJokesList>
-        <AddJokesListWithTimer></AddJokesListWithTimer>
+        {/* <AddJokesListWithTimer></AddJokesListWithTimer> */}
       </Col>
     </Row>
     <Row type="flex" justify="center">
