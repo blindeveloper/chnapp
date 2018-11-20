@@ -3,10 +3,7 @@ const jokesReducer = (state = [], action) => {
     case 'ADD_NEW_JOKE':
       return [
         ...state,
-        {
-          joke: action.joke,
-          id: action.id
-        }
+        action.joke
       ]
     case 'SWITCH_FAVORITE_STATUS':
       return state.map(el => {

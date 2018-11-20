@@ -2,8 +2,8 @@
 
 const request = require('request');
 
-function getJokesList(cb) {
-  request('http://api.icndb.com/jokes/random/10', function (err, res, body) {
+function getJokes(amount, cb) {
+  request(`http://api.icndb.com/jokes/random/${amount}`, function (err, res, body) {
     if (err) {
       cb(err, null)
     } else {
@@ -12,4 +12,4 @@ function getJokesList(cb) {
   })
 }
 
-module.exports = { getJokesList }
+module.exports = { getJokes }

@@ -1,9 +1,6 @@
-let jokesCounter = 0
-
-export const addNewJokeAction = jokeText => ({
+export const addSingleJokeAction = newJoke => ({
   type: 'ADD_NEW_JOKE',
-  joke: jokeText,
-  id: jokesCounter++
+  joke: newJoke
 })
 
 export const addJokesListAction = jokesList => ({

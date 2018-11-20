@@ -1,8 +1,8 @@
 import React from 'react'
-import { getJokesList } from '../resource/index'
+import { getJokes } from '../resource/index'
 
 const getListOfJokes = addJokesList => {
-  getJokesList((err, data) => {
+  getJokes(10, (err, data) => {
     if(err) throw err
     addJokesList(JSON.parse(data).value)
   })
