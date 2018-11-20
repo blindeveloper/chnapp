@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { getJokesList } from '../resource/index'
 
 const getListOfJokes = addJokesList => {

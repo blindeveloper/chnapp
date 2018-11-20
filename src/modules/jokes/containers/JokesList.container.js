@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { removeJokeAction } from '../actions/jokes.actions'
+import { addToFavoriteAction } from '../actions/jokes.actions'
 import jokesList from '../components/jokesList.jsx'
 
 const mapStateToProps = (state, ownProps) => ({
@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  removeJoke: id => dispatch(removeJokeAction(id))
+  addToFavorite: id => dispatch(addToFavoriteAction(id))
 })
 
 

@@ -11,7 +11,7 @@ export const addJokesListAction = jokesList => ({
   list: jokesList
 })
 
-export const removeJokeAction = jokeId => ({
-  type: 'REMOVE_JOKE',
+export const addToFavoriteAction = jokeId => ({
+  type: 'ADD_TO_FAVORITE',
   id: jokeId
 })
