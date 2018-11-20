@@ -8,7 +8,7 @@ const jokesReducer = (state = [], action) => {
           id: action.id
         }
       ]
-    case 'ADD_TO_FAVORITE':
+    case 'SWITCH_FAVORITE_STATUS':
       return state.map(el => {
         if (el.id === action.id) {
           el.isFavorite = !el.isFavorite
