@@ -4,7 +4,7 @@ const jokesReducer = (state = [], action) => {
       return [
         ...state,
         {
-          text: action.text,
+          joke: action.joke,
           id: action.id
         }
       ]

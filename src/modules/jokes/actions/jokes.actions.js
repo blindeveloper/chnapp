@@ -2,7 +2,7 @@ let jokesCounter = 0
 
 export const addNewJokeAction = jokeText => ({
   type: 'ADD_NEW_JOKE',
-  text: jokeText,
+  joke: jokeText,
   id: jokesCounter++
 })
 
