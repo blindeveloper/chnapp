@@ -1,17 +1,25 @@
 import React from 'react'
+import { List, Icon } from 'antd'
 
-const List = ({favoriteJokesList, switchFavoriteStatus}) => (
+const FavrotiteJokesList = ({favoriteJokesList, switchFavoriteStatus}) => (
   <div>
-    <h2>Favorite jokes:</h2>
-    <ul>
-      {favoriteJokesList.map((joke, i) => { 
-        return <li key={i}>
+    <List
+      header={<div>Favorite jokes:</div>}
+      bordered
+      dataSource={favoriteJokesList}
+      renderItem={joke => (
+        <List.Item>
           {joke.joke}
-          <button type='button' onClick={() => switchFavoriteStatus(joke)}>remore from favorite</button>
-        </li>
-      })}
-    </ul>
+          <Icon 
+            style={{fontSize: '21px', margin:'0 5px', cursor:'pointer'}}
+            onClick={() => switchFavoriteStatus(joke)} 
+            type="close-circle" 
+            theme="twoTone" 
+            twoToneColor="#eb2f96"/>
+        </List.Item>
+      )}
+    />
   </div>
 )
 
-export default List
+export default FavrotiteJokesList

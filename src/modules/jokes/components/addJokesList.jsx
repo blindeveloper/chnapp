@@ -1,5 +1,6 @@
 import React from 'react'
 import { getJokes } from '../resource/index'
+import { Button } from 'antd'
 
 const getListOfJokes = addJokesList => {
   getJokes(10, (err, data) => {
@@ -9,7 +10,7 @@ const getListOfJokes = addJokesList => {
 }
 
 const List = ({addJokesList}) => (
-  <button type='button' onClick={() => getListOfJokes(addJokesList)}>add jokes list</button>
+  <Button onClick={() => getListOfJokes(addJokesList)}>Add jokes list</Button>
 )
 
 export default List

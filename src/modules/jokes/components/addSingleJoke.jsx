@@ -1,5 +1,6 @@
 import React from 'react'
 import { getJokes } from '../resource/index'
+import { Button } from 'antd'
 
 const getJokeByTimer = (addSingleJoke, switchFavoriteStatus) => {
   getJokes(1, (err, data) => {
@@ -12,7 +13,7 @@ const getJokeByTimer = (addSingleJoke, switchFavoriteStatus) => {
 }
 
 const List = ({addSingleJoke, switchFavoriteStatus}) => (
-  <button type='button' onClick={() => getJokeByTimer(addSingleJoke, switchFavoriteStatus)}>add jokes by timer</button>
+  <Button onClick={() => getJokeByTimer(addSingleJoke, switchFavoriteStatus)}>add jokes by timer</Button>
 )
 
 export default List

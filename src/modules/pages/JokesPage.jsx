@@ -8,16 +8,16 @@ import { Layout, Row, Col } from 'antd'
 const jokes = () => (
   <div>
     <Row type="flex" justify="center">
-      <Col span={24}>
+      <Col span={24} style={{ padding: '20px 10px' }}>
         <AddJokesList></AddJokesList>
         {/* <AddJokesListWithTimer></AddJokesListWithTimer> */}
       </Col>
     </Row>
     <Row type="flex" justify="center">
-      <Col span={12}>
+      <Col span={12 } style={{ padding: '0 10px' }}>
         <JokesList></JokesList>
       </Col>
-      <Col span={12}>
+      <Col span={12} style={{ padding: '0 10px' }}>
         <FavoriteJokes></FavoriteJokes>
       </Col>
     </Row>
