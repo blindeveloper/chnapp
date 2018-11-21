@@ -9,13 +9,13 @@ const mapStateToProps = (state, ownProps) => ({
 const addFavoriteJokeToLocalStorage = (joke, cb) => {
   let localFavorites = JSON.parse(localStorage.getItem('favoriteJokes'))
   if (localFavorites && localFavorites.length > 9) return
-    if (localFavorites) {
-      localFavorites.push(joke)
-      localStorage.setItem('favoriteJokes', JSON.stringify(localFavorites))
-    } else {
-      localStorage.setItem('favoriteJokes', JSON.stringify([joke]))
-    }
-    cb()
+  if (localFavorites) {
+    localFavorites.push(joke)
+    localStorage.setItem('favoriteJokes', JSON.stringify(localFavorites))
+  } else {
+    localStorage.setItem('favoriteJokes', JSON.stringify([joke]))
+  }
+  cb()
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

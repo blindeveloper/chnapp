@@ -4,14 +4,14 @@ import favoriteJokesList from '../components/favoriteJokesList.jsx'
 
 const removeFavoriteJokeFromLocalStorage = (joke, cb) => {
   let localFavorites = localStorage.getItem('favoriteJokes')
-    if (localFavorites) {
-      localFavorites = JSON.parse(localFavorites)
-      localFavorites = localFavorites.filter(el => el.id !== joke.id)
-      localStorage.setItem('favoriteJokes', JSON.stringify(localFavorites))
-    } else {
-      localStorage.setItem('favoriteJokes', JSON.stringify([joke]))
-    }
-    cb()
+  if (localFavorites) {
+    localFavorites = JSON.parse(localFavorites)
+    localFavorites = localFavorites.filter(el => el.id !== joke.id)
+    localStorage.setItem('favoriteJokes', JSON.stringify(localFavorites))
+  } else {
+    localStorage.setItem('favoriteJokes', JSON.stringify([joke]))
+  }
+  cb()
 }
 
 const getCurrentFavoriteList = (state, ownProps) => {
@@ -35,7 +35,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     })
   }
 })
-
 
 export default connect(
   mapStateToProps,
