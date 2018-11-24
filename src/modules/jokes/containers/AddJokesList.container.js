@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
-import { addJokesListAction } from '../actions/jokes.actions'
+import { addListOfJokesToCommonJokeListAction } from '../actions/jokes.actions'
 import addJokesList from '../components/addJokesList.jsx'
 
 const mapStateToProps = () => {}
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  addJokesList: list => dispatch(addJokesListAction(list))
+const mapDispatchToProps = dispatch => ({
+  addListOfJokesToCommonJokeList: list => dispatch(addListOfJokesToCommonJokeListAction(list))
 })
 
 export default connect(

@@ -1,10 +1,14 @@
 import React from 'react'
 import { List, Icon } from 'antd'
 
-const FavrotiteJokesList = ({favoriteJokesList, switchFavoriteStatus}) => (
+const FavrotiteJokesList = ({
+  favoriteJokesList, 
+  removeJokeFromFavoriteList, 
+  addSingleJokeToCommonJokeList
+}) => (
   <div>
     <List
-      header={<div>Favorite jokes:</div>}
+      header={<div>Favorite jokes: {favoriteJokesList.length}</div>}
       bordered
       dataSource={favoriteJokesList}
       renderItem={joke => (
@@ -12,7 +16,10 @@ const FavrotiteJokesList = ({favoriteJokesList, switchFavoriteStatus}) => (
           {joke.joke}
           <Icon 
             style={{fontSize: '21px', margin:'0 5px', cursor:'pointer'}}
-            onClick={() => switchFavoriteStatus(joke)} 
+            onClick={() => {
+              removeJokeFromFavoriteList(joke.id)
+              addSingleJokeToCommonJokeList(joke)
+            }} 
             type="close-circle" 
             theme="twoTone" 
             twoToneColor="#eb2f96"/>

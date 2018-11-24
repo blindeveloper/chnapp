@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
-import { switchFavoriteStatusAction } from '../actions/jokes.actions'
-import jokesList from '../components/jokesList.jsx'
+import { addJokeToFavoriteListAction,
+        removeJokeFromCommonListAction } from '../actions/jokes.actions'
+import jokesList from '../components/commonJokesList.jsx'
 
-const mapStateToProps = (state, ownProps) => ({
-  jokesList: state.jokesListReducer
+const mapStateToProps = (state) => ({
+  commonJokesList: state.jokesListReducer
 })
 
 const addFavoriteJokeToLocalStorage = (joke, cb) => {
@@ -18,12 +19,14 @@ const addFavoriteJokeToLocalStorage = (joke, cb) => {
     cb()
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   switchFavoriteStatus: joke => {
     addFavoriteJokeToLocalStorage(joke, () => {
-      dispatch(switchFavoriteStatusAction(joke.id))
+      // dispatch(switchFavoriteStatusAction(joke.id))
     })
-  }
+  },
+  addJokeToFavoriteList: joke => dispatch(addJokeToFavoriteListAction(joke)),
+  removeJokeFromCommonList: jokeId => dispatch(removeJokeFromCommonListAction(jokeId))
 })
 
 export default connect(

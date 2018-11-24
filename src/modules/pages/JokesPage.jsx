@@ -1,9 +1,9 @@
 import React from 'react'
-import JokesList from '../jokes/containers/JokesList.container'
+import CommonJokesList from '../jokes/containers/CommonJokesList.container'
 import AddJokesList from '../jokes/containers/AddJokesList.container'
-import FavoriteJokes from '../jokes/containers/FavoriteJokes.container'
+import FavoriteJokesList from '../jokes/containers/FavoriteJokesList.container'
 import AddJokesListWithTimer from '../jokes/containers/AddJokesListWithTimer.container'
-import { Layout, Row, Col } from 'antd'
+import { Row, Col } from 'antd'
 
 const jokes = () => (
   <div>
@@ -15,10 +15,10 @@ const jokes = () => (
     </Row>
     <Row type="flex" justify="center">
       <Col span={12 } style={{ padding: '0 10px' }}>
-        <JokesList></JokesList>
+        <CommonJokesList></CommonJokesList>
       </Col>
       <Col span={12} style={{ padding: '0 10px' }}>
-        <FavoriteJokes></FavoriteJokes>
+        <FavoriteJokesList></FavoriteJokesList>
       </Col>
     </Row>
   </div>
