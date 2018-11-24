@@ -8,6 +8,11 @@ export const addListOfJokesToCommonJokeListAction = jokesList => ({
   list: jokesList
 })
 
+export const addListOfJokesToFavoriteJokeListAction = jokesList => ({
+  type: 'ADD_LIST_OF_JOKES_TO_FAVORITE_JOKE_LIST',
+  list: jokesList
+})
+
 export const addJokeToFavoriteListAction = joke => ({
   type: 'ADD_FAVORITE_JOKE',
   joke: joke
