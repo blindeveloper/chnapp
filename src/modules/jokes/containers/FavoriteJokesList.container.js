@@ -15,18 +15,7 @@ const removeFavoriteJokeFromLocalStorage = (joke, cb) => {
     cb()
 }
 
-const getCurrentFavoriteList = (state, ownProps) => {
-  let localFavorites = localStorage.getItem('favoriteJokes')
-  // let currentJokeList = state.jokesListReducer.filter(el => el.isFavorite).slice(0,10)
-  if (localFavorites) {
-    localFavorites = JSON.parse(localFavorites)
-    return localFavorites
-  }
-  return currentJokeList
-}
-
-const mapStateToProps = (state, ownProps) => ({
-  // favoriteJokesList: getCurrentFavoriteList(state, ownProps)
+const mapStateToProps = state => ({
   favoriteJokesList: state.favoriteJokesListReducer
 })
 

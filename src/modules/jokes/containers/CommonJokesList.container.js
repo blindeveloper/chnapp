@@ -8,24 +8,22 @@ const mapStateToProps = (state) => ({
 })
 
 const addFavoriteJokeToLocalStorage = (joke, cb) => {
-  let localFavorites = JSON.parse(localStorage.getItem('favoriteJokes'))
-  if (localFavorites && localFavorites.length > 9) return
-    if (localFavorites) {
-      localFavorites.push(joke)
-      localStorage.setItem('favoriteJokes', JSON.stringify(localFavorites))
-    } else {
-      localStorage.setItem('favoriteJokes', JSON.stringify([joke]))
-    }
-    cb()
+  let localStorageFavoriteJokeList = JSON.parse(localStorage.getItem('favoriteJokes'))
+  if (localStorageFavoriteJokeList) {
+    localStorageFavoriteJokeList.push(joke)
+    localStorage.setItem('favoriteJokes', JSON.stringify(localStorageFavoriteJokeList))
+  } else {
+    localStorage.setItem('favoriteJokes', JSON.stringify([joke]))
+  }
+  cb()
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  switchFavoriteStatus: joke => {
+  addJokeToFavoriteList: joke => {
     addFavoriteJokeToLocalStorage(joke, () => {
-      // dispatch(switchFavoriteStatusAction(joke.id))
+      dispatch(addJokeToFavoriteListAction(joke))
     })
   },
-  addJokeToFavoriteList: joke => dispatch(addJokeToFavoriteListAction(joke)),
   removeJokeFromCommonList: jokeId => dispatch(removeJokeFromCommonListAction(jokeId))
 })
 
