@@ -1,9 +1,11 @@
 import { connect } from 'react-redux'
 import { addSingleJokeToFavoriteListAction } from '../actions/jokes.actions'
-import addSingleJokeToFavoriteList from '../components/addSingleJokeToFavoriteList.jsx'
 import { addFavoriteJokeToLocalStorage } from '../commonServices/FavorireJokesLocalStorageManipulation.service'
+import addSingleJokeToFavoriteList from '../components/addSingleJokeToFavoriteList.jsx'
 
-const mapStateToProps = () => {}
+const mapStateToProps = state => ({
+  favoriteJokesListLength: state.favoriteJokesListReducer.length
+})
 
 const mapDispatchToProps = dispatch => ({
   addSingleJokeToFavoriteList: joke => {
