@@ -5,7 +5,7 @@ const jokesReducer = (state = [], action) => {
         ...state,
         action.joke
       ]
-    case 'REMOVE_JOKE_FROM_COMMON_LIST':
+    case 'REMOVE_SINGLE_JOKE_FROM_COMMON_JOKE_LIST':
       return state.filter(el => el.id !== action.id)
     case 'ADD_LIST_OF_JOKES_TO_COMMON_JOKE_LIST':
       return action.list

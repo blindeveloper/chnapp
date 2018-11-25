@@ -1,30 +1,20 @@
 import { connect } from 'react-redux'
-import { addJokeToFavoriteListAction,
-        removeJokeFromCommonListAction } from '../actions/jokes.actions'
+import { addSingleJokeToFavoriteListAction,
+        removeSingleJokeFromCommonJokeListAction } from '../actions/jokes.actions'
 import jokesList from '../components/commonJokesList.jsx'
+import { addFavoriteJokeToLocalStorage } from '../commonServices/FavorireJokesLocalStorageManipulation.service'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   commonJokesList: state.jokesListReducer
 })
 
-const addFavoriteJokeToLocalStorage = (joke, cb) => {
-  let localStorageFavoriteJokeList = JSON.parse(localStorage.getItem('favoriteJokes'))
-  if (localStorageFavoriteJokeList) {
-    localStorageFavoriteJokeList.push(joke)
-    localStorage.setItem('favoriteJokes', JSON.stringify(localStorageFavoriteJokeList))
-  } else {
-    localStorage.setItem('favoriteJokes', JSON.stringify([joke]))
-  }
-  cb()
-}
-
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   addJokeToFavoriteList: joke => {
     addFavoriteJokeToLocalStorage(joke, () => {
-      dispatch(addJokeToFavoriteListAction(joke))
+      dispatch(addSingleJokeToFavoriteListAction(joke))
     })
   },
-  removeJokeFromCommonList: jokeId => dispatch(removeJokeFromCommonListAction(jokeId))
+  removeJokeFromCommonList: jokeId => dispatch(removeSingleJokeFromCommonJokeListAction(jokeId))
 })
 
 export default connect(

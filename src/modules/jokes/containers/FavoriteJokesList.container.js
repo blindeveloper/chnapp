@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import favoriteJokesList from '../components/favoriteJokesList.jsx'
-import { removeJokeFromFavoriteListAction, 
+import { removeSingleJokeFromFavoriteJokeListAction, 
         addSingleJokeToCommonJokeListAction,
         addListOfJokesToFavoriteJokeListAction } from '../actions/jokes.actions'
 
@@ -21,7 +21,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   removeJokeFromFavoriteList: jokeId => {
     removeFavoriteJokeFromLocalStorage(jokeId)
-    dispatch(removeJokeFromFavoriteListAction(jokeId))
+    dispatch(removeSingleJokeFromFavoriteJokeListAction(jokeId))
   },
   addSingleJokeToCommonJokeList: joke => dispatch(addSingleJokeToCommonJokeListAction(joke)),
   addListOfJokesToFavoriteJokeList: jokeList => dispatch(addListOfJokesToFavoriteJokeListAction(jokeList))
