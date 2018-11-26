@@ -1,24 +1,25 @@
 import React from 'react'
-import JokesList from '../jokes/containers/JokesList.container'
-import AddJokesList from '../jokes/containers/AddJokesList.container'
-import FavoriteJokes from '../jokes/containers/FavoriteJokes.container'
-import AddJokesListWithTimer from '../jokes/containers/AddJokesListWithTimer.container'
+
+import CommonJokesList from '../jokes/containers/CommonJokesList.container'
+import AddJokesListToCommonJokeList from '../jokes/containers/AddJokesList.container'
+import FavoriteJokesList from '../jokes/containers/FavoriteJokesList.container'
+import AddSingleJokeToFavoriteList from '../jokes/containers/AddSingleJokeToFavoriteList.container'
 import { Row, Col } from 'antd'
 
 const jokes = () => (
   <div>
     <Row type="flex" justify="center">
       <Col span={24} style={{ padding: '20px 10px' }}>
-        <AddJokesList></AddJokesList>
-        <AddJokesListWithTimer></AddJokesListWithTimer>
+        <AddJokesListToCommonJokeList></AddJokesListToCommonJokeList>
+        Add joke by timer: <AddSingleJokeToFavoriteList timer={5}></AddSingleJokeToFavoriteList>
       </Col>
     </Row>
     <Row type="flex" justify="center">
-      <Col span={12} style={{ padding: '0 10px' }}>
-        <JokesList></JokesList>
+      <Col span={12 } style={{ padding: '0 10px' }}>
+        <CommonJokesList></CommonJokesList>
       </Col>
       <Col span={12} style={{ padding: '0 10px' }}>
-        <FavoriteJokes></FavoriteJokes>
+        <FavoriteJokesList></FavoriteJokesList>
       </Col>
     </Row>
   </div>

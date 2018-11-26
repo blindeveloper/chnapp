@@ -9,8 +9,8 @@ const getListOfJokes = addJokesList => {
   })
 }
 
-const List = ({addJokesList}) => (
-  <Button onClick={() => getListOfJokes(addJokesList)}>Add jokes list</Button>
+const List = ({addListOfJokesToCommonJokeList}) => (
+  <Button style={{marginRight: '10px'}} onClick={() => getListOfJokes(addListOfJokesToCommonJokeList)}>Add jokes list</Button>
 )
 
 export default List
